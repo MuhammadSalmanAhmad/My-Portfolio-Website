@@ -1,23 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header/Header';
+import About from './Feed/about';
+import { Element } from 'react-scroll';
+import Contact from './Feed/contact';
+import Typewriter from 'typewriter-effect';
+import { ReactTyped } from "react-typed";
+import me from './assets/me.jpg'
+import { Avatar } from "@mui/material";
+import MainBody from './body';
+import Skills from './Feed/skills';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <div className='app_body'>
+        
+        <MainBody></MainBody>
+        <About></About>
+        <Skills></Skills>
+      </div>
     </div>
   );
 }

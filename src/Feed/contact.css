@@ -1,0 +1,20 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6d6e70;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes the full viewport height */
+    width: 100%;
+}
+
+.formdiv{
+    margin-bottom: 10px;
+
+}
