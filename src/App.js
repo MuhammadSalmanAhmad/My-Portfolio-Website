@@ -10,9 +10,11 @@ import me from './assets/me.jpg'
 import { Avatar } from "@mui/material";
 import MainBody from './body';
 import Skills from './Feed/skills';
+import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
   return (
+    
     <div className="App">
       <Header></Header>
       <div className='app_body'>

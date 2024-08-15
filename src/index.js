@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Routes,Route,Navigate,Link} from 'react-router
 import About from './Feed/about';
 import Contact from './Feed/contact';
 import Portfolio from './portfolio';
+import { ChakraProvider } from '@chakra-ui/react'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
