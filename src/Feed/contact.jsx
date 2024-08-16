@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./contact.css";
+import LocMaps from "./Maps/maps";
 
 export default function Contact() {
     const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm();
@@ -63,6 +64,11 @@ export default function Contact() {
                     </div>
                 </form>
             </div>
+            
+            <LocMaps></LocMaps>
+
+            
+           
         </div>
     );
 }
