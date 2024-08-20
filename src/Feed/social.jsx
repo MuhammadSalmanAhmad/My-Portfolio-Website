@@ -1,6 +1,6 @@
 import React from "react";
 import linkedin from '../assets/linkedin.png'
-import Location from '@mui/icons-material/LocationOn'
+import LocationOn from '@mui/icons-material/LocationOn'
 import Phone from '@mui/icons-material/WhatsApp'
 import Email from '@mui/icons-material/Email'
 import Linkedin from '@mui/icons-material/LinkedIn'
@@ -18,7 +18,7 @@ function Socials() {
 
 
             <div class="inline-flex  bg-stone-600  mr-10 ml-10 mt-10 mb-10  py-2 px-2 rounded-xl transition ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" >
-                <Location style={{ fontSize: 35, color: 'white' }} />
+                <LocationOn style={{ fontSize: 35, color: 'white' }} />
                 <h5 style={{
                     color: 'white',
                     fontSize: '15px',
