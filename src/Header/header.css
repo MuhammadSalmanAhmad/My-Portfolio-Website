@@ -11,3 +11,16 @@
     align-items: center;
     width: 50%;
 }
+
+.link {
+    color: white;
+    font-size: 20px;
+    text-align: start;
+    margin-bottom: 20px;
+    align-self: start;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: #ffa726;
+}
