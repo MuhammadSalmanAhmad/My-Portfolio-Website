@@ -24,6 +24,9 @@ export default function About() {
                 fontSize: "30 px",
                 textAlign: "start",
                 overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                
             
             }}>{about}</p>
 

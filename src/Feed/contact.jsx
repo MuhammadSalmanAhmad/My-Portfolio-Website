@@ -12,62 +12,52 @@ export default function Contact() {
     };
 
     return (
-        <div className="contact">
-            <h1 style={{
-                color: '#ffa726',
-                textAlign: "center",
-                fontSize: "50px",
-                marginBottom: "30px",
-                fontWeight: 'bold'
-            }}>Contact</h1>
+        <div className="contact p-4 sm:p-8 lg:p-16">
+            <h1 className="text-4xl sm:text-5xl font-bold text-center text-orange-500 mb-8">
+                Contact
+            </h1>
 
-            <div className='box mx-auto px-10 py-8 bg-slate-500 w-96 flex flex-col items-center justify-center md:box-content'>
-                <h2 style={{
-                    color: 'white',
-                    fontSize: '25px',
-                    textAlign: 'start',
-                    marginBottom: '20px',
-                    alignSelf: "start"
-                }}>Let's talk</h2>
-                <p style={{
-                    color: 'white',
-                    fontSize: '15px',
-                    textAlign: 'start',
-                    marginBottom: '20px'
-                }}>
+            <div className="box mx-auto px-6 sm:px-10 py-8 bg-slate-500 w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 flex flex-col items-center justify-center md:box-content rounded-lg shadow-lg">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white text-left mb-6">
+                    Let's talk
+                </h2>
+                <p className="text-base sm:text-lg text-white text-left mb-6">
                     If you have any queries or want to know more about me, feel free to contact me.
                 </p>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="formdiv">
-                        <label htmlFor="fullName" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Full Name</label>
-                        <input {...register('name', { required: true, maxLength: 30 })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                <form onSubmit={handleSubmit(onSubmit)} className="w-full">
+                    <div className="formdiv mb-4">
+                        <label htmlFor="fullName" className="block mb-2 text-sm font-medium text-gray-100">
+                            Full Name
+                        </label>
+                        <input {...register('name', { required: true, maxLength: 30 })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         {errors.name && <p className="text-red-500 text-sm">{errors.name.message || "Full Name is required"}</p>}
                     </div>
 
-                    <div className="formdiv">
-                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                        <input {...register("email", { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <div className="formdiv mb-4">
+                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-100">
+                            Email
+                        </label>
+                        <input {...register("email", { required: true, pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         {errors.email && <p className="text-red-500 text-sm">{errors.email.message || "Invalid email address"}</p>}
                     </div>
 
-                    <div className="formdiv">
-                        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
-                        <input {...register("message", { required: true, maxLength: 100 })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <div className="formdiv mb-6">
+                        <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-100">
+                            Message
+                        </label>
+                        <input {...register("message", { required: true, maxLength: 100 })} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         {errors.message && <p className="text-red-500 text-sm">{errors.message.message || "Message is required"}</p>}
                     </div>
 
-                    <div style={{  display: "flex", justifyContent: "center", marginTop: "20px" }}>
-                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <div className="flex justify-center mt-6">
+                        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">
                             Submit
                         </button>
                     </div>
                 </form>
             </div>
-            
-            <LocMaps></LocMaps>
 
-            
            
         </div>
     );

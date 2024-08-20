@@ -11,6 +11,7 @@ import { Avatar } from "@mui/material";
 import MainBody from './body';
 import Skills from './Feed/skills';
 import { ChakraProvider } from '@chakra-ui/react'
+import Socials from './Feed/social';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <MainBody></MainBody>
         <About></About>
         <Skills></Skills>
+        <Socials></Socials>
       </div>
     </div>
   );

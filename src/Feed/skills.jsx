@@ -23,10 +23,11 @@ export default function Skills() {
                 color:'#ffa726',
                 textAlign:"center",
                 fontSize:"50px",
-                marginBottom:"30px"
+                marginBottom:"30px",
+                overflow:"hidden"
 
             }}>Skills</h1>
-            <div class='grid gap-4 grid-cols-4 ml-20 mb-20'>
+            <div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ml-4 sm:ml-8 lg:ml-20 mb-20 '>
                 <Container title={'Flutter'} image={flutter}></Container>
                 <Container title={'Django' } image={django}></Container>
                 <Container title={'Flask'} image={flask}></Container>
