@@ -1,3 +1,131 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+
+  --color-accent: #06b6d4;
+  --color-accent-2: #7c3aed;
+  --color-accent-3: #ec4899;
+
+  --animate-marquee: marquee 45s linear infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+:root {
+  --bg: #fafafa;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --border: #e4e4e7;
+  --border-strong: #c9c9d1;
+  --fg: #111114;
+  --muted: #52525b;
+  --subtle: #8a8a94;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #09090b;
+  --bg-elevated: #0f0f13;
+  --surface: #131318;
+  --border: #26262e;
+  --border-strong: #3a3a46;
+  --fg: #f4f4f5;
+  --muted: #a1a1aa;
+  --subtle: #71717a;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-bg text-fg font-sans antialiased;
+  background-image:
+    radial-gradient(60% 40% at 50% -10%, rgba(124, 58, 237, 0.12), transparent 70%),
+    radial-gradient(40% 30% at 100% 20%, rgba(6, 182, 212, 0.08), transparent 70%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(6, 182, 212, 0.3);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--fg) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--fg) 6%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 30%, transparent 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #06b6d4 0%, #7c3aed 55%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card {
+  @apply rounded-2xl border border-border bg-surface;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.card:hover {
+  @apply border-border-strong;
+  box-shadow: 0 0 0 1px rgba(6, 182, 212, 0.1), 0 20px 50px -24px rgba(124, 58, 237, 0.35);
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-md border border-border bg-bg-elevated px-2 py-0.5 font-mono text-[11px] text-muted;
+}
+
+.section-title {
+  @apply text-3xl font-bold tracking-tight text-fg sm:text-4xl;
+}
+
+.eyebrow {
+  @apply font-mono text-xs uppercase tracking-[0.2em] text-accent;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition bg-fg text-bg hover:opacity-90;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition border border-border bg-surface text-fg hover:border-border-strong;
+}
+
+.input {
+  @apply w-full rounded-xl border border-border bg-bg-elevated px-4 py-2.5 text-sm text-fg outline-none placeholder:text-subtle focus:border-accent focus:ring-2 focus:ring-accent/20;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html, body {
+  overflow-x: clip;
+}
